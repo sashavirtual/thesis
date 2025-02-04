@@ -1,0 +1,70 @@
+def sweater(weight,c,u,dye_cost=0):
+    first=c["cost"]*(weight/c["weight"])
+    if weight%u["dye_coverage"]>0:
+        dye_cost=weight//u["dye_coverage"]*(u["dye"]+1)
+    else:
+        dye_cost=weight//u["dye_coverage"]*u["dye"]
+    second=u["cost"]/u["weight"]*weight+dye_cost
+    return int(first if first<second else second)
+
+print(sweater(800,{ #354
+    "cost":60,
+    "weight":100},{
+    "cost":50,
+    "dye":50,
+    "weight":100,
+    "dye_coverage":400}))
+    
+print(sweater(900,{ #355
+    "cost":70,
+    "weight":100},{
+    "cost":60,
+    "dye":40,
+    "weight":100,
+    "dye_coverage":300}))
+
+print(sweater(900,{ #356
+    "cost":80,
+    "weight":100},{
+    "cost":70,
+    "dye":40,
+    "weight":100,
+    "dye_coverage":300}))
+    
+print(sweater(900,{ #357
+    "cost":80,
+    "weight":100},{
+    "cost":70,
+    "dye":50,
+    "weight":100,
+    "dye_coverage":300}))
+    
+print(sweater(900,{ #358
+    "cost":70,
+    "weight":100},{
+    "cost":60,
+    "dye":50,
+    "weight":100,
+    "dye_coverage":450}))
+    
+print(sweater(900,{ #359
+    "cost":70,
+    "weight":50},{
+    "cost":60,
+    "dye":20,
+    "weight":50,
+    "dye_coverage":450}))
+print(sweater(900,{ #360
+    "cost":70,
+    "weight":50},{
+    "cost":60,
+    "dye":20,
+    "weight":50,
+    "dye_coverage":300}))
+print(sweater(900,{ #361
+    "cost":80,
+    "weight":100},{
+    "cost":60,
+    "dye":40,
+    "weight":100,
+    "dye_coverage":300}))
